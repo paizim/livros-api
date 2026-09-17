@@ -59,3 +59,74 @@ spring.datasource.driverClassName=org.h2.Driver
 spring.datasource.username=sa
 spring.datasource.password=
 spring.h2.console.enabled=true
+
+🚀 Como Executar o Projeto
+Abrir no IntelliJ IDEA:
+
+Abra o IntelliJ.
+
+Vá em File > Open e selecione a pasta do projeto (livros-api).
+
+Sincronizar as Dependências:
+
+Caso o IntelliJ solicite, clique no ícone do Maven (canto superior direito) para baixar as bibliotecas do pom.xml.
+
+Executar a Aplicação:
+
+Navegue até a pasta src/main/java/com/example/livrosapi/.
+
+Abra a classe LivrosApiApplication.java.
+
+Clique no ícone do Play (triângulo verde) ao lado do nome da classe ou aperte Shift + F10.
+
+Confirmar a Inicialização:
+
+Acompanhe os logs no console do IntelliJ até aparecer a mensagem:
+Started LivrosApiApplication in X seconds
+
+🧪 Exemplos de Uso
+A aplicação rodará no endereço base: http://localhost:8081
+
+1. Cadastrar um Novo Livro (POST)
+URL: http://localhost:8081/livros
+
+Método: POST
+
+Cabeçalho (Header): Content-Type: application/json
+
+Corpo (Body JSON):
+{
+  "titulo": "Dom Casmurro",
+  "autor": "Machado de Assis"
+}
+
+2. Listar Todos os Livros (GET)
+URL: http://localhost:8081/livros
+
+Método: GET
+
+Resposta Esperada (JSON):
+[
+  {
+    "id": 1,
+    "titulo": "Dom Casmurro",
+    "autor": "Machado de Assis"
+  }
+]
+
+🗄️ Acessando o Console do Banco SQL (H2)
+O Spring Boot fornece uma interface gráfica no navegador para visualizar e manipular as tabelas SQL diretamente.
+
+Abra o seu navegador e acesse: http://localhost:8081/h2-console
+
+Preencha os campos da tela de login exatamente assim:
+
+JDBC URL: jdbc:h2:mem:livrosdb
+
+User Name: sa
+
+Password: (deixe o campo em branco)
+
+Clique no botão Connect.
+
+No painel esquerdo, você poderá visualizar a tabela LIVRO e executar comandos SQL (SELECT * FROM LIVRO;).
